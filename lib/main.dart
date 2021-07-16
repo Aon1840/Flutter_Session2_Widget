@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_session_2/SecondScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -86,6 +87,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     return ListTile(
                       title: Text(favouriteFoods[index]),
                       leading: Icon(Icons.icecream),
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return SecondScreen(food: favouriteFoods[index]);
+                        }));
+                      },
                     );
                   },
                 ),
